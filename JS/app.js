@@ -21,8 +21,24 @@ posicaoY = posicaoY < 0 ? 0 : posicaoY;
 //cria o elemento mosca
 let mosca = document.createElement("img");
 mosca.src = "../img/mosca.png";
-mosca.className = "mosca1";
+mosca.className = tamanhoMoscaAleatorio();
 mosca.style.left = `${posicaoX}px`;
 mosca.style.top = `${posicaoY}px`;
 mosca.style.position = "absolute";
 document.body.appendChild(mosca);
+
+//tamanho aleatorio da img mosca
+function tamanhoMoscaAleatorio() {
+  let classe = Math.floor(Math.random() * 3);
+  console.log(classe);
+
+  switch (classe) {
+    case 0:
+      return "mosca1";
+    case 1:
+      return "mosca2";
+    case 2:
+        return 'mosca3'
+  }
+}
+console.log(tamanhoMoscaAleatorio())
