@@ -10,22 +10,30 @@ function ajusteViewport() {
 ajusteViewport();
 
 /*cria posição X e Y aleatoriamente*/
-let posicaoX = Math.floor(Math.random() * largura) - 90;
-let posicaoY = Math.floor(Math.random() * altura) - 90;
-console.log(posicaoX, posicaoY);
+function posicaoMoscaAleatoria() {
+  let posicaoX = Math.floor(Math.random() * largura) - 90;
+  let posicaoY = Math.floor(Math.random() * altura) - 90;
+  console.log(posicaoX, posicaoY);
 
-//controle de posicionamento do elemento mosca
-posicaoX = posicaoX < 0 ? 0 : posicaoX;
-posicaoY = posicaoY < 0 ? 0 : posicaoY;
+  //controle de posicionamento da img mosca
+  posicaoX = posicaoX < 0 ? 0 : posicaoX;
+  posicaoY = posicaoY < 0 ? 0 : posicaoY;
 
-//cria o elemento mosca
-let mosca = document.createElement("img");
-mosca.src = "../img/mosca.png";
-mosca.className = tamanhoMoscaAleatorio() + " " + ladoAleatorio();
-mosca.style.left = `${posicaoX}px`;
-mosca.style.top = `${posicaoY}px`;
-mosca.style.position = "absolute";
-document.body.appendChild(mosca);
+  //remove a img mosca (caso tenha)
+  if (document.getElementById("mosca")) {
+    document.getElementById("mosca").remove();
+  }
+
+  //cria a img mosca
+  let mosca = document.createElement("img");
+  mosca.src = "../img/mosca.png";
+  mosca.className = tamanhoMoscaAleatorio() + " " + ladoAleatorio();
+  mosca.style.left = `${posicaoX}px`;
+  mosca.style.top = `${posicaoY}px`;
+  mosca.style.position = "absolute";
+  mosca.id = "mosca";
+  document.body.appendChild(mosca);
+}
 
 //tamanho aleatorio da img mosca
 function tamanhoMoscaAleatorio() {
@@ -45,7 +53,7 @@ console.log(tamanhoMoscaAleatorio());
 
 //cria lados opostos( esquerda e direita) da img mosca
 function ladoAleatorio() {
-  var classe = Math.floor(Math.random() * 2);
+  let classe = Math.floor(Math.random() * 2);
   switch (classe) {
     case 0:
       return "ladoA";
@@ -54,3 +62,7 @@ function ladoAleatorio() {
   }
 }
 console.log(ladoAleatorio());
+
+setInterval(function () {
+  posicaoMoscaAleatoria();
+}, 1000);
