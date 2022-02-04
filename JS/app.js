@@ -1,5 +1,6 @@
 let largura;
 let altura;
+let vidas = 1;
 /*Ajuste da viewport em relação ao tamanho da viewport*/
 function ajusteViewport() {
   largura = window.innerWidth;
@@ -22,6 +23,12 @@ function posicaoMoscaAleatoria() {
   //remove a img mosca (caso tenha)
   if (document.getElementById("mosca")) {
     document.getElementById("mosca").remove();
+    if (vidas > 3) {
+      alert("interromper o jogo");
+    } else {
+      document.getElementById(`v${vidas}`).src = "../img/coracao_vazio.png";
+      vidas++;
+    }
   }
 
   //cria a img mosca
@@ -32,6 +39,9 @@ function posicaoMoscaAleatoria() {
   mosca.style.top = `${posicaoY}px`;
   mosca.style.position = "absolute";
   mosca.id = "mosca";
+  mosca.onclick = function () {
+    this.remove();
+  };
   document.body.appendChild(mosca);
 }
 
@@ -65,4 +75,4 @@ console.log(ladoAleatorio());
 
 setInterval(function () {
   posicaoMoscaAleatoria();
-}, 1000);
+}, 2000);
