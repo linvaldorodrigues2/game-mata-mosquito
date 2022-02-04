@@ -21,7 +21,7 @@ posicaoY = posicaoY < 0 ? 0 : posicaoY;
 //cria o elemento mosca
 let mosca = document.createElement("img");
 mosca.src = "../img/mosca.png";
-mosca.className = tamanhoMoscaAleatorio();
+mosca.className = tamanhoMoscaAleatorio() + " " + ladoAleatorio();
 mosca.style.left = `${posicaoX}px`;
 mosca.style.top = `${posicaoY}px`;
 mosca.style.position = "absolute";
@@ -38,7 +38,19 @@ function tamanhoMoscaAleatorio() {
     case 1:
       return "mosca2";
     case 2:
-        return 'mosca3'
+      return "mosca3";
   }
 }
-console.log(tamanhoMoscaAleatorio())
+console.log(tamanhoMoscaAleatorio());
+
+//cria lados opostos( esquerda e direita) da img mosca
+function ladoAleatorio() {
+  var classe = Math.floor(Math.random() * 2);
+  switch (classe) {
+    case 0:
+      return "ladoA";
+    case 1:
+      return "ladoB";
+  }
+}
+console.log(ladoAleatorio());
