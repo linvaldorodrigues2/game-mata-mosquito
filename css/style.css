@@ -39,3 +39,22 @@ body{
 .ladoB{
     transform: scaleX(-1);
 }
+#img-gameover{
+    display: flex;
+    justify-content: center;
+}
+#gameover-button{
+    display: flex;
+    justify-content: center;
+}
+#gameover-button button{
+    background-color: #353535;
+    color: #fff;
+    padding:20px 40px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 1.5em;
+}
+#gameover-button button:hover{
+    background: #414141;
+}

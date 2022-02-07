@@ -24,7 +24,7 @@ function posicaoMoscaAleatoria() {
   if (document.getElementById("mosca")) {
     document.getElementById("mosca").remove();
     if (vidas > 3) {
-      alert("interromper o jogo");
+      window.location.assign('../html/gameover.html')
     } else {
       document.getElementById(`v${vidas}`).src = "../img/coracao_vazio.png";
       vidas++;
