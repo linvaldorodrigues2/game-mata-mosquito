@@ -1,6 +1,7 @@
 let largura;
 let altura;
 let vidas = 1;
+let tempo = 11;
 /*Ajuste da viewport em relação ao tamanho da viewport*/
 function ajusteViewport() {
   largura = window.innerWidth;
@@ -24,7 +25,7 @@ function posicaoMoscaAleatoria() {
   if (document.getElementById("mosca")) {
     document.getElementById("mosca").remove();
     if (vidas > 3) {
-      window.location.assign('../html/gameover.html')
+      window.location.assign("../html/gameover.html");
     } else {
       document.getElementById(`v${vidas}`).src = "../img/coracao_vazio.png";
       vidas++;
@@ -73,6 +74,19 @@ function ladoAleatorio() {
 }
 console.log(ladoAleatorio());
 
-setInterval(function () {
+//intervalo de criação da img mosca
+let criaMoscaTempo = setInterval(function () {
   posicaoMoscaAleatoria();
-}, 2000);
+}, 1000);
+
+//cronometro
+let cronometro = setInterval(function () {
+  tempo -= 1;
+  if (tempo < 0) {
+    clearInterval(cronometro);
+    clearInterval(criaMoscaTempo);
+    alert("você venceu");
+  } else {
+    document.getElementById("tempo").innerHTML = tempo;
+  }
+}, 1000);
