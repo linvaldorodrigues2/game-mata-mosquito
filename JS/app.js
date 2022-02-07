@@ -25,7 +25,7 @@ function posicaoMoscaAleatoria() {
   if (document.getElementById("mosca")) {
     document.getElementById("mosca").remove();
     if (vidas > 3) {
-      window.location.assign("../html/gameover.html");
+      window.location.href = '../html/gameover.html';
     } else {
       document.getElementById(`v${vidas}`).src = "../img/coracao_vazio.png";
       vidas++;
@@ -85,7 +85,7 @@ let cronometro = setInterval(function () {
   if (tempo < 0) {
     clearInterval(cronometro);
     clearInterval(criaMoscaTempo);
-    alert("você venceu");
+    window.location.href = '../html/vitoria.html'
   } else {
     document.getElementById("tempo").innerHTML = tempo;
   }

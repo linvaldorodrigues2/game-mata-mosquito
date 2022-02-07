@@ -43,6 +43,7 @@ body{
     display: flex;
     justify-content: center;
 }
+/*pagina gama over*/
 #gameover-button{
     display: flex;
     justify-content: center;
@@ -57,4 +58,21 @@ body{
 }
 #gameover-button button:hover{
     background: #414141;
+}
+/*pagina vitoria*/
+#img-vitoria{
+    display: flex;
+    justify-content: center;
+}
+#button-vitoria{
+    display: flex;
+    justify-content: center;
+}
+#button-vitoria button{
+    background-color: #353535;
+    color: #fff;
+    padding:20px 40px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 1.5em;
 }
