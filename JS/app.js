@@ -2,6 +2,26 @@ let largura;
 let altura;
 let vidas = 1;
 let tempo = 11;
+
+/*nivel de dificuldade*/
+let nivel = window.location.search;
+nivel = nivel.replace("?", "");
+
+let nivelTempo = 1000;
+
+if (nivel === "facil") {
+  nivelTempo = 2500;
+} else if (nivel === "normal") {
+  nivelTempo = 1500;
+} else if (nivel === "dificil") {
+  nivelTempo = 1000;
+}
+
+//intervalo de criação da img mosca
+let criaMoscaTempo = setInterval(function () {
+  posicaoMoscaAleatoria();
+}, nivelTempo);
+
 /*Ajuste da viewport em relação ao tamanho da viewport*/
 function ajusteViewport() {
   largura = window.innerWidth;
@@ -73,11 +93,6 @@ function ladoAleatorio() {
   }
 }
 console.log(ladoAleatorio());
-
-//intervalo de criação da img mosca
-let criaMoscaTempo = setInterval(function () {
-  posicaoMoscaAleatoria();
-}, 1000);
 
 //cronometro
 let cronometro = setInterval(function () {
