@@ -1,3 +1,6 @@
+html{
+    cursor: url(../img/mata_mosca.png) 30 30, auto;
+}
 body{
     background: url(../img/bg.jpg)no-repeat;
     background-size: 100%;
@@ -39,16 +42,21 @@ body{
 .ladoB{
     transform: scaleX(-1);
 }
-#img-gameover{
+
+/*formatação geral img*/
+#start-img, #img-gameover, #img-vitoria{
     display: flex;
     justify-content: center;
 }
-/*pagina gama over*/
-#gameover-button{
+
+/*pagina start/ game over / vitoria*/
+#nivel-jogo, #start-button, #gameover-button, #button-vitoria{
     display: flex;
     justify-content: center;
 }
-#gameover-button button{
+
+/*formatação geral botão*/
+button{
     background-color: #353535;
     color: #fff;
     padding:20px 40px;
@@ -56,23 +64,26 @@ body{
     border-radius: 10px;
     font-size: 1.5em;
 }
-#gameover-button button:hover{
+button:hover{
     background: #414141;
 }
-/*pagina vitoria*/
-#img-vitoria{
-    display: flex;
-    justify-content: center;
+
+/*página start*/
+#nivel-jogo select{
+    width: 250px;
+    padding: 10px 5px;
+    margin: 20px 0;
+    border-radius: 10px;
+    font-size: 1em;
 }
-#button-vitoria{
-    display: flex;
-    justify-content: center;
-}
-#button-vitoria button{
-    background-color: #353535;
+#start-button button{
+    background-color: #cc1414;
     color: #fff;
     padding:20px 40px;
     border: 1px solid transparent;
     border-radius: 10px;
     font-size: 1.5em;
+}
+#start-button button:hover{
+    background: #ff2121;
 }
