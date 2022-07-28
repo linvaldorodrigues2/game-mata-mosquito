@@ -44,15 +44,10 @@ body {
   transform: scaleX(-1);
 }
 
-/*formatação geral img*/
+/*formatação geral img*/ /*pagina start/ game over / vitoria*/
 #start-img,
 #img-gameover,
-#img-vitoria {
-  display: flex;
-  justify-content: center;
-}
-
-/*pagina start/ game over / vitoria*/
+#img-vitoria,
 #nivel-jogo,
 #start-button,
 #gameover-button,
@@ -60,7 +55,6 @@ body {
   display: flex;
   justify-content: center;
 }
-
 /*formatação geral botão*/
 button {
   background-color: #353535;
@@ -77,9 +71,12 @@ button:hover {
 /*página start*/
 #nivel-jogo select {
   width: 250px;
+  height: 50px;
   padding: 10px 5px;
   margin: 20px 0;
   border-radius: 10px;
+  border: none;
+  text-align: center;
   font-size: 1em;
 }
 #start-button button {

@@ -55,7 +55,7 @@ function posicaoMoscaAleatoria() {
   //cria a img mosca
   let mosca = document.createElement("img");
   mosca.src = "../img/mosca.png";
-  mosca.className = tamanhoMoscaAleatorio() + " " + ladoAleatorio();
+  mosca.className = `${tamanhoMoscaAleatorio()} ${ladoAleatorio()}`;
   mosca.style.left = `${posicaoX}px`;
   mosca.style.top = `${posicaoY}px`;
   mosca.style.position = "absolute";
